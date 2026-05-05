@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BJJ Camp Morocco · Train hard. Travel right.</title>
+<meta name="description" content="A curated week of serious training, long-table dinners, and the kind of people you stay in touch with. Edition 01 · Oct 8–12, 2026 · Limited to 24 athletes." />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Tailwind CDN with theme config -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: "#0E0C0A",
+          charcoal: "#1A1612",
+          bone: "#F2EBDC",
+          cream: "#FAF8F4",
+          sand: "#F1E9D8",
+          "sand-soft": "#EAE0CB",
+          gold: "#C9A96E",
+          red: "#A52432",
+          mute: "#7A6F5E",
+        },
+        fontFamily: {
+          serif: ['"Cormorant Garamond"', "Georgia", "serif"],
+          sans: ['"Inter Tight"', "system-ui", "sans-serif"],
+          mono: ['"JetBrains Mono"', "monospace"],
+        },
+        letterSpacing: {
+          eyebrow: "0.28em",
+          label: "0.22em",
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: "Inter Tight", system-ui, sans-serif; color: #0E0C0A; background: #ffffff; }
+
+  /* Image placeholder — used until real assets dropped in */
+  .ph {
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.04), rgba(0,0,0,0.06)),
+      repeating-linear-gradient(45deg, #232017 0 10px, #2a2620 10px 20px);
+    color: rgba(242,235,220,0.55);
+    display: flex; align-items: center; justify-content: center;
+    font-family: "JetBrains Mono", monospace; font-size: 10px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    text-align: center; padding: 16px;
+  }
+  .ph.light {
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.6), rgba(0,0,0,0.04)),
+      repeating-linear-gradient(45deg, #EAE2D2 0 10px, #E2D9C5 10px 20px);
+    color: rgba(14,12,10,0.5);
+  }
+
+  /* Floating-label form field */
+  [data-field] label span {
+    transition: top 240ms cubic-bezier(.2,.7,.2,1), font-size 240ms cubic-bezier(.2,.7,.2,1), color 240ms ease;
+  }
+  [data-field] input:focus + span,
+  [data-field].is-active label span {
+    top: -10px; font-size: 10px; color: #0E0C0A;
+  }
+
+  /* FAQ animations */
+  [data-faq-body] {
+    overflow: hidden;
+    transition: max-height 360ms ease, opacity 280ms ease, padding 240ms ease;
+  }
+  [data-faq-plus] { transition: transform 240ms ease; }
+
+  /* Choice card hover */
+  [data-choice] { transition: background 240ms cubic-bezier(.2,.7,.2,1), color 240ms ease, border-color 240ms ease; }
+
+  /* CTA hover */
+  [data-cta-primary] { transition: background 240ms ease, color 240ms ease, letter-spacing 240ms ease; }
+  [data-cta-primary]:hover:not(:disabled) { background: #C9A96E !important; color: #0E0C0A !important; letter-spacing: 0.34em !important; }
+
+  /* Sticky-nav underline animation */
+  [data-nav-underline] {
+    transform-origin: left center;
+    transition: transform 240ms cubic-bezier(.2,.7,.2,1);
+  }
+
+  /* Hero overlay gradient */
+  .hero-overlay {
+    background: linear-gradient(180deg, rgba(14,12,10,0.6) 0%, rgba(14,12,10,0.3) 40%, rgba(14,12,10,0.85) 100%);
+  }
+
+  /* Watermark Arabic letters */
+  .watermark {
+    position: absolute;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 300; font-style: italic;
+    line-height: 1; letter-spacing: -0.05em;
+    user-select: none; pointer-events: none;
+  }
+</style>
+</head>
+
+<body class="bg-white text-ink antialiased">
+
+<!-- ===================================================================== -->
+<!-- 01 · STICKY NAV                                                       -->
+<!-- ===================================================================== -->
+<header class="sticky top-0 z-50 backdrop-blur-md bg-ink/90 border-b border-bone/10">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-16 py-3.5 flex justify-between items-center">
+    <a href="#top" class="flex items-center gap-3.5 no-underline">
+      <!-- assets/logo.png — BJJ Camp Morocco wordmark, transparent PNG -->
+      <img src="assets/logo.png" alt="BJJ Camp Morocco" class="h-8 brightness-0 invert" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<span class=\'font-serif italic text-bone text-xl\'>BJJ Camp Morocco</span>')" />
+    </a>
+    <nav class="flex gap-8 items-center">
+      <a href="#experience" data-nav-link="experience" class="relative font-mono text-[11px] font-semibold tracking-label uppercase text-bone/80 hover:text-gold no-underline transition-colors">
+        Experience
+        <span data-nav-underline class="absolute -bottom-1.5 left-0 right-0 h-px bg-gold scale-x-0"></span>
+      </a>
+      <a href="#schedule" data-nav-link="schedule" class="relative font-mono text-[11px] font-semibold tracking-label uppercase text-bone/80 hover:text-gold no-underline transition-colors">
+        Schedule
+        <span data-nav-underline class="absolute -bottom-1.5 left-0 right-0 h-px bg-gold scale-x-0"></span>
+      </a>
+      <a href="#testimonials" data-nav-link="testimonials" class="relative font-mono text-[11px] font-semibold tracking-label uppercase text-bone/80 hover:text-gold no-underline transition-colors">
+        Testimonials
+        <span data-nav-underline class="absolute -bottom-1.5 left-0 right-0 h-px bg-gold scale-x-0"></span>
+      </a>
+      <a href="#faq" data-nav-link="faq" class="relative font-mono text-[11px] font-semibold tracking-label uppercase text-bone/80 hover:text-gold no-underline transition-colors">
+        FAQ
+        <span data-nav-underline class="absolute -bottom-1.5 left-0 right-0 h-px bg-gold scale-x-0"></span>
+      </a>
+      <a href="#apply" class="px-5 py-3 font-mono text-[11px] font-semibold tracking-label uppercase bg-gold text-ink no-underline hover:bg-bone transition-colors">
+        Request Invitation →
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===================================================================== -->
+<!-- 02 · HERO                                                             -->
+<!-- ===================================================================== -->
+<section id="top" class="relative w-full h-screen overflow-hidden bg-ink">
+  <!-- assets/hero-reel.mp4 — replace with real footage; assets/hero-poster.jpg fallback -->
+  <video autoplay muted loop playsinline poster="assets/hero-poster.jpg" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+    <source src="assets/hero-reel.mp4" type="video/mp4" />
+  </video>
+  <!-- Placeholder under video (only visible if assets missing) -->
+  <div class="ph absolute inset-0 -z-0" data-label="HERO · DRONE OVER ATLAS · GOLDEN HOUR · FULL BLEED">
+    HERO · DRONE OVER ATLAS · GOLDEN HOUR
+  </div>
+  <div class="absolute inset-0 hero-overlay"></div>
+
+  <div class="relative z-10 h-full flex flex-col justify-center pt-28 md:pt-32 pb-14 w-full">
+    <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-16 w-full">
+      <div class="max-w-5xl">
+        <div class="font-mono text-[11px] font-semibold tracking-eyebrow uppercase text-gold mb-6">
+          Edition 01 · Oct 8–12, 2026 · Limited to 24 Athletes
+        </div>
+        <h1 class="font-serif font-light text-bone leading-[0.94] tracking-[-0.025em] text-balance" style="font-size: clamp(48px, 6vw, 96px)">
+          Train hard. Travel right.<br />
+          Do it with people who actually <em class="italic text-gold">get it.</em>
+        </h1>
+        <p class="font-serif italic font-light text-bone/85 leading-snug mt-7" style="font-size: clamp(18px, 1.6vw, 24px)">
+          A curated week of serious training, long-table dinners, and the kind of people you stay in touch with.
+        </p>
+        <div class="flex gap-3 mt-10 flex-wrap">
+          <a href="#apply" class="px-7 py-4 font-mono text-[11px] font-semibold tracking-eyebrow uppercase bg-gold text-ink no-underline hover:bg-bone transition-colors inline-flex items-center gap-3">
+            Request Your Invitation <span class="text-base">→</span>
+          </a>
+          <a href="#experience" class="px-7 py-4 font-mono text-[11px] font-semibold tracking-eyebrow uppercase border border-bone/40 text-bone hover:border-gold hover:text-gold no-underline transition-colors">
+            Watch the Reel
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bleed transition -->
+<div class="h-32" style="background: linear-gradient(180deg, #0E0C0A 0%, #1A1612 60%, #FAF8F4 100%)"></div>
+
+<!-- ===================================================================== -->
+<!-- 03 · FLAGSHIP — THE HIGH ATLAS EXPERIENCE                             -->
+<!-- ===================================================================== -->
+<section id="experience" class="bg-cream relative py-24">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-16">
+  <div class="grid grid-cols-[7fr_5fr] min-h-[600px]">
+    <!-- Image side -->
+    <div class="relative overflow-hidden min-h-[600px]">
+      <!-- assets/flagship.jpg — Atlas rooftop mat, golden hour, full bleed -->
+      <img src="assets/flagship.jpg" alt="Rooftop training mat in the High Atlas at golden hour" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" />
+      <div class="ph absolute inset-0" data-label="ATLAS · ROOFTOP MAT · GOLDEN HOUR">ATLAS · ROOFTOP MAT · GOLDEN HOUR · FULL BLEED</div>
+      <!-- Right-edge fade into cream column -->
+      <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(90deg, transparent 0%, transparent 70%, #FAF8F4 100%)"></div>
+      <!-- Scarcity chip -->
+      <div class="absolute left-8 bottom-8">
+        <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-ink/80 text-bone font-mono text-[10px] tracking-label uppercase font-semibold">
+          <span class="w-1.5 h-1.5 bg-gold rounded-full"></span>
+          Limited to 24 athletes
+        </span>
+      </div>
+    </div>
+
+    <!-- Copy side -->
+    <div class="pl-10 lg:pl-14 py-20 pr-0 flex flex-col justify-center">
+      <div class="font-mono text-[11px] font-semibold tracking-eyebrow uppercase text-red">Edition 01 · Flagship</div>
+      <h2 class="font-serif font-light text-ink leading-[0.98] tracking-[-0.025em] mt-6 text-balance" style="font-size: clamp(46px, 4.4vw, 72px)">
+        The High Atlas <em class="italic text-red">Experience.</em>
+      </h2>
+      <p class="font-serif italic font-light text-charcoal leading-snug mt-7" style="font-size: clamp(18px, 1.6vw, 23px)">
+        Everything about this week is intentional — who's in the room, how you train, and how you live between sessions.
+      </p>
+
+      <div class="mt-10 pt-8 border-t border-ink/10 grid grid-cols-2 gap-6">
+        <div class="flex flex-col gap-1.5">
+          <div class="font-serif text-2xl font-light text-ink leading-none">7 days</div>
+          <div class="font-mono text-[10px] tracking-label uppercase text-mute">of cinematic training</div>
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <div class="font-serif text-2xl font-light text-ink leading-none">14 sessions</div>
+          <div class="font-mono text-[10px] tracking-label uppercase text-mute">led by black belts</div>
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <div class="font-serif text-2xl font-light text-ink leading-none">3 chef meals</div>
+          <div class="font-mono text-[10px] tracking-label uppercase text-mute">long-table, daily</div>
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <div class="font-serif text-2xl font-light text-ink leading-none">2 excursions</div>
+          <div class="font-mono text-[10px] tracking-label uppercase text-mute">Atlas trek · Essaouira surf</div>
+        </div>
+      </div>
+
+      <div class="mt-12">
+        <a href="#apply" class="px-7 py-4 font-mono text-[11px] font-semibold tracking-eyebrow uppercase bg-ink text-bone no-underline hover:bg-gold hover:text-ink transition-colors inline-flex items-center gap-3">
+          Request Your Invitation <span class="text-base">→</span>
+        </a>
+      </div>
+      <div class="mt-6 font-mono text-[10px] tracking-label uppercase text-mute">
+        · Application required · 17 of 24 spots open ·
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ===================================================================== -->
+<!-- 04 · TESTIMONIALS — featured + 3-up                                   -->
+<!-- ===================================================================== -->
+<section id="testimonials" class="bg-cream py-24 relative overflow-hidden">
+  <div class="watermark" style="left: -40px; top: 60px; font-size: 360px; color: rgba(14,12,10,0.04)">"</div>
+
+  <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-16 relative">
+    <div class="font-mono text-[11px] font-semibold tracking-eyebrow uppercase text-red">In Their Words</div>
+    <h2 class="font-serif font-light text-ink leading-[0.98] tracking-[-0.025em] mt-6 mb-14 max-w-5xl text-balance" style="font-size: clamp(44px, 4.8vw, 72px)">
+      What happens when you come <em class="italic text-red">to Morocco…</em>
+    </h2>
+
+    <!-- Featured testimonial -->
+    <div class="grid grid-cols-[8fr_6fr] gap-12 items-stretch mb-16">
+      <div class="relative overflow-hidden aspect-[16/10]">
+        <!-- assets/testimonial-1.jpg — Reza on rooftop mat -->
+        <img src="assets/testimonial-1.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" />
+        <div class="ph absolute inset-0" data-label="REZA · BLACK BELT · DUBAI · 02:34">REZA · BLACK BELT · DUBAI · FEATURED · 02:34</div>
+        <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 50%, rgba(14,12,10,0.85) 100%)"></div>
+
+        <button aria-label="Play testimonial" class="absolute left-8 bottom-8 w-20 h-20 rounded-full border border-gold bg-gold/15 backdrop-blur cursor-pointer flex items-center justify-center hover:bg-gold/30 transition-colors">
+          <span class="ml-1.5" style="width: 0; height: 0; border-left: 18px solid #C9A96E; border-top: 11px solid transparent; border-bottom: 11px solid transparent;"></span>
+        </button>
+
+        <div class="absolute right-6 top-6 px-3 py-1.5 bg-ink/60 border border-bone/30 font-mono text-[10px] tracking-label uppercase text-bone">
+          ▶ 02:34 · Watch
+        </div>
+
+        <div class="absolute left-8 bottom-32 text-bone">
+          <div class="font-serif text-3xl italic">Reza Mahmoodi</div>
+          <div class="font-mono text-[10px] tracking-label uppercase text-gold mt-1.5">Black Belt · Dubai · Edition 01</div>
+        </div>
+      </div>
+
+      <figure class="m-0 flex flex-col justify-center">
+        <div class="font-serif text-[112px] text-red leading-[0.4] mb-3">"</div>
+        <blockquote class="m-0 font-serif font-light text-ink leading-[1.28] tracking-[-0.01em] text-balance" style="font-size: clamp(24px, 2.1vw, 34px)">
+          I've done a lot of camps. This is the only one I'd go back to without thinking.
+        </blockquote>
+        <figcaption class="mt-8 pt-5 border-t border-ink/15">
+          <div class="font-serif text-xl italic font-medium text-ink">Reza Mahmoodi</div>
+          <div class="font-mono text-[10px] tracking-label uppercase text-mute mt-1.5">Black Belt · Dubai · Returning Athlete</div>
+        </figcaption>
+      </figure>
+    </div>
+
+    <!-- 3-up supporting -->
+    <div class="grid grid-cols-3 gap-8 md:gap-10">
+      <figure class="m-0 pt-8 border-t border-ink/15 flex flex-col gap-6 min-h-[280px]">
+        <div class="font-mono text-[10px] tracking-label uppercase text-red">01 · Edition 01</div>
+        <blockquote class="m-0 font-serif text-[20px] font-light text-ink leading-relaxed flex-1">
+          "I expected the training to be elite. I didn't expect to cry on the last morning."
+        </blockquote>
+        <figcaption class="flex items-center gap-3.5">
+          <!-- assets/testimonial-2.jpg — Andrea avatar -->
+          <div class="ph w-11 h-11 rounded-full"></div>
+          <div>
+            <div class="font-serif text-[18px] italic font-medium text-ink">Andrea L.</div>
+            <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-mute mt-0.5">Purple Belt · Toronto</div>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="m-0 pt-8 border-t border-ink/15 flex flex-col gap-6 min-h-[280px]">
+        <div class="font-mono text-[10px] tracking-label uppercase text-red">02 · Edition 01</div>
+        <blockquote class="m-0 font-serif text-[20px] font-light text-ink leading-relaxed flex-1">
+          "I came alone. I left with twenty new training partners and a standing dinner invitation in Berlin."
+        </blockquote>
+        <figcaption class="flex items-center gap-3.5">
+          <!-- assets/testimonial-3.jpg — Marcus avatar -->
+          <div class="ph w-11 h-11 rounded-full"></div>
+          <div>
+            <div class="font-serif text-[18px] italic font-medium text-ink">Marcus T.</div>
+            <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-mute mt-0.5">Blue Belt · Berlin</div>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="m-0 pt-8 border-t border-ink/15 flex flex-col gap-6 min-h-[280px]">
+        <div class="font-mono text-[10px] tracking-label uppercase text-red">03 · Edition 01</div>
+        <blockquote class="m-0 font-serif text-[20px] font-light text-ink leading-relaxed flex-1">
+          "The riad alone was a movie. Add the rolls, the food, and the desert — already booked next year."
+        </blockquote>
+        <figcaption class="flex items-center gap-3.5">
+          <!-- assets/testimonial-4.jpg — David avatar -->
+          <div class="ph w-11 h-11 rounded-full"></div>
+          <div>
+            <div class="font-serif text-[18px] italic font-medium text-ink">David K.</div>
+            <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-mute mt-0.5">Brown Belt · Singapore</div>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Bleed into dark film -->
+<div class="h-20" style="background: linear-gradient(180deg, #FAF8F4 0%, #0E0C0A 100%)"></div>
+
+<!-- ===================================================================== -->
+<!-- 05 · CINEMATIC FILM BAND                                              -->
+<!-- ===================================================================== -->
+<section class="bg-ink text-bone">
+  <div class="relative aspect-[21/10] overflow-hidden">
+    <!-- assets/recap.mp4 — recap reel; assets/reel-still.jpg fallback poster -->
+    <video muted loop playsinline poster="assets/reel-still.jpg" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+      <source src="assets/recap.mp4" type="video/mp4" />
+    </video>
+    <div class="ph absolute inset-0" data-label="MEDINA RUNS · ROOFTOP DRILLS · DESERT">LONG-TAKE · MEDINA RUNS · ROOFTOP DRILLS · DESERT</div>
+    <div class="absolute inset-0" style="background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.35) 60%, rgba(0,0,0,0.7) 100%)"></div>
+
+    <div class="absolute inset-0 z-10 flex items-center">
+      <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-16 w-full flex flex-col sm:flex-row sm:items-center sm:justify-between gap-10">
+        <div class="max-w-2xl">
+          <div class="font-mono text-[11px] font-semibold tracking-eyebrow uppercase text-gold">The Reel · 02:47</div>
+          <h2 class="font-serif font-light text-bone leading-[0.98] tracking-[-0.025em] mt-5" style="font-size: clamp(44px, 5.2vw, 78px)">
+            This isn't just a BJJ camp.<br /><em class="italic text-gold">It's adventure, luxury, and great vibes in a week to remember.</em>
+          </h2>
+          <div class="mt-8 flex gap-3 flex-wrap">
+            <button class="px-7 py-4 font-mono text-[11px] font-semibold tracking-eyebrow uppercase bg-gold text-ink hover:bg-bone transition-colors inline-flex items-center gap-3">
+              ▶ Watch · 02:47
+            </button>
+            <button class="px-7 py-4 font-mono text-[11px] font-semibold tracking-eyebrow uppercase border border-bone/40 text-bone hover:border-gold hover:text-gold transition-colors">
+              Read the Story
+            </button>
+          </div>
+        </div>
+
+        <button aria-label="Play recap" class="shrink-0 w-32 h-32 rounded-full border border-gold bg-gold/10 backdrop-blur text-gold cursor-pointer flex items-center justify-center hover:bg-gold/25 transition-colors">
+          <span class="ml-1.5" style="width: 0; height: 0; border-left: 22px solid #C9A96E; border-top: 14px solid transparent; border-bottom: 14px solid transparent;"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-bone/10 py-4">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-16 flex justify-between font-mono text-[10px] tracking-label uppercase text-gold">
+    <span>SHOT IN THE ATLAS · OCT 2025</span>
+    <span>DIR. YOUSSEF EL ALAMI · DOLBY VISION · 4K</span>
+    <span>EDITION 01 RECAP</span>
+  </div>
+  </div>
+</section>
+
+<!-- ===================================================================== -->
+<!-- 06 · FUTURE EXPEDITIONS                                               -->
+<!-- ===================================================================== -->
+<section id="schedule" class="bg-ink text-bone py-24">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-16">
+    <div class="flex justify-between items-end mb-12 gap-6 flex-wrap">
+      <div>
+        <div class="font-mono text-[11px] font-semibold tracking-eyebrow uppercase text-red">The Calendar</div>
+        <h2 class="font-serif font-light text-bone leading-[0.98] tracking-[-0.025em] mt-5" style="font-size: clamp(44px, 4.8vw, 72px)">
+          Future <em class="italic text-gold">Expeditions.</em>
+        </h2>
+        <p class="font-serif italic font-light text-bone/70 max-w-[560px] leading-snug mt-6" style="font-size: clamp(16px, 1.35vw, 20px)">
+          Priority access is given to past attendees and readers. The waitlist isn't a queue — it's a filter.
+        </p>
+      </div>
+      <span class="font-mono text-[11px] tracking-eyebrow uppercase text-gold">5 ANNOUNCED · 2 MORE IN MAY</span>
+    </div>
+
+    <div class="grid grid-cols-5 gap-4">
+      <!-- Edition 01 — Featured / Open -->
+      <article class="bg-bone text-ink flex flex-col overflow-hidden hover:-translate-y-1 transition-transform">
+        <div class="relative aspect-[4/5] overflow-hidden">
+          <!-- assets/edition-01-atlas.jpg -->
+          <img src="assets/edition-01-atlas.jpg" alt="High Atlas, Marrakech" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" />
+          <div class="ph absolute inset-0" data-label="THE HIGH ATLAS">THE HIGH ATLAS</div>
+          <div class="absolute left-3 top-3 px-2.5 py-1.5 bg-red text-bone font-mono text-[9px] tracking-label uppercase font-semibold">Now Open</div>
+        </div>
+        <div class="p-4 flex flex-col flex-1">
+          <span class="font-mono text-[10px] tracking-label uppercase text-red">OCT 2026</span>
+          <span class="font-serif text-xl font-medium mt-2 tracking-[-0.01em]">The High Atlas</span>
+          <span class="font-serif text-[15px] italic font-light text-mute mt-1">Marrakech · Flagship</span>
+          <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-red mt-3">17/24 OPEN</span>
+          <a href="#apply" class="mt-5 bg-ink text-bone py-3 px-4 font-mono text-[10px] font-semibold tracking-label uppercase no-underline text-center hover:bg-gold hover:text-ink transition-colors">Request Invitation →</a>
+        </div>
+      </article>
+
+      <!-- Edition 02 — Coastal -->
+      <article class="border border-bone/15 flex flex-col overflow-hidden opacity-85 hover:opacity-100 hover:-translate-y-1 transition-all">
+        <div class="relative aspect-[4/5] overflow-hidden">
+          <!-- assets/edition-02-essaouira.jpg -->
+          <img src="assets/edition-02-essaouira.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" style="filter: blur(2px) brightness(0.7)" onerror="this.style.display='none'" />
+          <div class="ph absolute inset-0">COASTAL CAMP · ESSAOUIRA</div>
+        </div>
+        <div class="p-4 flex flex-col flex-1">
+          <span class="font-mono text-[10px] tracking-label uppercase text-gold">MAR 2027</span>
+          <span class="font-serif text-xl font-medium mt-2 tracking-[-0.01em] text-bone">Coastal Camp</span>
+          <span class="font-serif text-[15px] italic font-light text-bone/65 mt-1">Essaouira</span>
+          <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-gold mt-3">WAITLIST</span>
+          <a href="#inner-circle" class="mt-5 border border-bone/40 text-bone py-3 px-4 font-mono text-[10px] font-semibold tracking-label uppercase no-underline text-center hover:bg-bone hover:text-ink transition-colors">Join Waitlist →</a>
+        </div>
+      </article>
+
+      <!-- Edition 03 — The Return -->
+      <article class="border border-bone/15 flex flex-col overflow-hidden opacity-85 hover:opacity-100 hover:-translate-y-1 transition-all">
+        <div class="relative aspect-[4/5] overflow-hidden">
+          <!-- assets/edition-03-marrakech.jpg -->
+          <img src="assets/edition-03-marrakech.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" style="filter: blur(2px) brightness(0.7)" onerror="this.style.display='none'" />
+          <div class="ph absolute inset-0">THE RETURN · MARRAKECH</div>
+        </div>
+        <div class="p-4 flex flex-col flex-1">
+          <span class="font-mono text-[10px] tracking-label uppercase text-gold">OCT 2027</span>
+          <span class="font-serif text-xl font-medium mt-2 tracking-[-0.01em] text-bone">The Return</span>
+          <span class="font-serif text-[15px] italic font-light text-bone/65 mt-1">Marrakech</span>
+          <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-gold mt-3">ANNOUNCING SOON</span>
+          <a href="#inner-circle" class="mt-5 border border-bone/40 text-bone py-3 px-4 font-mono text-[10px] font-semibold tracking-label uppercase no-underline text-center hover:bg-bone hover:text-ink transition-colors">Join Waitlist →</a>
+        </div>
+      </article>
+
+      <!-- Edition 04 — Sahara -->
+      <article class="border border-bone/15 flex flex-col overflow-hidden opacity-85 hover:opacity-100 hover:-translate-y-1 transition-all">
+        <div class="relative aspect-[4/5] overflow-hidden">
+          <!-- assets/edition-04-sahara.jpg -->
+          <img src="assets/edition-04-sahara.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" style="filter: blur(2px) brightness(0.7)" onerror="this.style.display='none'" />
+          <div class="ph absolute inset-0">SAHARA EDITION · MERZOUGA</div>
+        </div>
+        <div class="p-4 flex flex-col flex-1">
+          <span class="font-mono text-[10px] tracking-label uppercase text-gold">MAR 2028</span>
+          <span class="font-serif text-xl font-medium mt-2 tracking-[-0.01em] text-bone">Sahara Edition</span>
+          <span class="font-serif text-[15px] italic font-light text-bone/65 mt-1">Merzouga</span>
+          <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-gold mt-3">ANNOUNCING SOON</span>
+          <a href="#inner-circle" class="mt-5 border border-bone/40 text-bone py-3 px-4 font-mono text-[10px] font-semibold tracking-label uppercase no-underline text-center hover:bg-bone hover:text-ink transition-colors">Join Waitlist →</a>
+        </div>
+      </article>
+
+      <!-- Edition 05 — Tangier -->
+      <article class="border border-bone/15 flex flex-col overflow-hidden opacity-85 hover:opacity-100 hover:-translate-y-1 transition-all">
+        <div class="relative aspect-[4/5] overflow-hidden">
+          <!-- assets/edition-05-tangier.jpg -->
+          <img src="assets/edition-05-tangier.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" style="filter: blur(2px) brightness(0.7)" onerror="this.style.display='none'" />
+          <div class="ph absolute inset-0">TANGIER EDITION</div>
+        </div>
+        <div class="p-4 flex flex-col flex-1">
+          <span class="font-mono text-[10px] tracking-label uppercase text-gold">OCT 2028</span>
+          <span class="font-serif text-xl font-medium mt-2 tracking-[-0.01em] text-bone">Tangier Edition</span>
+          <span class="font-serif text-[15px] italic font-light text-bone/65 mt-1">Tangier</span>
+          <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-gold mt-3">ANNOUNCING SOON</span>
+          <a href="#inner-circle" class="mt-5 border border-bone/40 text-bone py-3 px-4 font-mono text-[10px] font-semibold tracking-label uppercase no-underline text-center hover:bg-bone hover:text-ink transition-colors">Join Waitlist →</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-bone/10 flex justify-between flex-wrap gap-4 font-mono text-[10px] tracking-label uppercase text-bone/50">
+      <span>Each edition is limited to 24 athletes</span>
+      <span>Application required for all future expeditions</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================================== -->
+<!-- 07 · "THIS IS FOR YOU IF…" — typographic filter                       -->
+<!-- ===================================================================== -->
+<section class="bg-bone py-24">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-16">
+  <div class="grid grid-cols-[5fr_7fr] gap-12">
+    <div>
+      <div class="font-mono text-[11px] font-semibold tracking-eyebrow uppercase text-red">The Filter</div>
+      <h2 class="font-serif font-light text-ink leading-[0.98] tracking-[-0.025em] mt-6" style="font-size: clamp(44px, 4.8vw, 72px)">
+        This is for you<br /><em class="italic">if…</em>
+      </h2>
+      <p class="font-serif italic font-light text-mute leading-snug mt-7 max-w-[380px]" style="font-size: clamp(16px, 1.4vw, 20px)">
+        We don't sell seats. We hand them to people who'll show up the way the rest of the room is showing up.
+      </p>
+      <div class="mt-10">
+        <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-ink/85 text-bone font-mono text-[10px] tracking-label uppercase font-semibold">
+          <span class="w-1.5 h-1.5 bg-gold rounded-full"></span>
+          Application required
+        </span>
+      </div>
+    </div>
+    <div>
+      <div class="grid grid-cols-[60px_1fr] gap-8 py-7 border-b border-ink/10">
+        <div class="font-mono text-[11px] tracking-label text-red pt-1.5">01</div>
+        <div>
+          <div class="font-serif font-light text-ink leading-[1.15] tracking-[-0.01em]" style="font-size: clamp(21px, 1.95vw, 28px)">You take training seriously.</div>
+          <div class="text-[14px] leading-relaxed text-mute mt-2.5 max-w-[520px]">You've been on the mat long enough that you don't need to be entertained — you need to be challenged.</div>
+        </div>
+      </div>
+      <div class="grid grid-cols-[60px_1fr] gap-8 py-7 border-b border-ink/10">
+        <div class="font-mono text-[11px] tracking-label text-red pt-1.5">02</div>
+        <div>
+          <div class="font-serif font-light text-ink leading-[1.15] tracking-[-0.01em]" style="font-size: clamp(21px, 1.95vw, 28px)">You value experience over things.</div>
+          <div class="text-[14px] leading-relaxed text-mute mt-2.5 max-w-[520px]">A week in the Atlas means more to you than another watch, another hotel, another flex.</div>
+        </div>
+      </div>
+      <div class="grid grid-cols-[60px_1fr] gap-8 py-7 border-b border-ink/10">
+        <div class="font-mono text-[11px] tracking-label text-red pt-1.5">03</div>
+        <div>
+          <div class="font-serif font-light text-ink leading-[1.15] tracking-[-0.01em]" style="font-size: clamp(21px, 1.95vw, 28px)">You want to roll with people you'd actually fly to see.</div>
+          <div class="text-[14px] leading-relaxed text-mute mt-2.5 max-w-[520px]">Twenty-three other practitioners, vetted. Black belts in the room. Dinners that go past midnight.</div>
+        </div>
+      </div>
+      <div class="grid grid-cols-[60px_1fr] gap-8 py-7">
+        <div class="font-mono text-[11px] tracking-label text-red pt-1.5">04</div>
+        <div>
+          <div class="font-serif font-light text-ink leading-[1.15] tracking-[-0.01em]" style="font-size: clamp(21px, 1.95vw, 28px)">You're ready for an adventure that feels like a sure thing.</div>
+          <div class="text-[14px] leading-relaxed text-mute mt-2.5 max-w-[520px]">No tour buses, no copy-paste itineraries. A private riad, a chef, and a week engineered so the risk you take is the training — not the trip.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ===================================================================== -->
+<!-- 08 · FOUNDER · MIKAL                                                  -->
+<!-- ===================================================================== -->
+<section class="bg-charcoal text-bone py-24">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-16">
+  <div class="grid grid-cols-[5fr_7fr] gap-12 items-stretch">
+    <div class="relative">
+      <div class="aspect-[4/5] relative overflow-hidden">
+        <!-- assets/founder.jpg — Mikal portrait, gi, medina wall -->
+        <img src="assets/founder.jpg" alt="Mikal Abdullah, founder" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" />
+        <div class="ph absolute inset-0" data-label="MIKAL ABDULLAH · PORTRAIT">MIKAL ABDULLAH · PORTRAIT · GI · MEDINA WALL</div>
+      </div>
+      <div class="absolute left-0 bottom-8 bg-bone text-ink px-6 py-4 max-w-[280px]">
+        <div class="font-serif text-[28px] italic font-medium leading-none">Mikal Abdullah.</div>
+        <div class="font-mono text-[10px] tracking-label uppercase text-mute mt-2">Founder · Head Instructor</div>
+      </div>
+    </div>
+
+    <div class="flex flex-col justify-between">
+      <div>
+        <div class="font-mono text-[11px] font-semibold tracking-eyebrow uppercase text-gold">The Man Behind the Camp</div>
+        <h2 class="font-serif font-light text-bone leading-[0.98] tracking-[-0.025em] mt-6" style="font-size: clamp(44px, 4.8vw, 72px)">
+          Twenty-two years.<br />Three continents.<br /><em class="italic text-gold">One standard.</em>
+        </h2>
+      </div>
+
+      <div class="mt-10 font-serif font-light leading-relaxed text-bone/95 max-w-[640px]" style="font-size: clamp(16px, 1.4vw, 21px)">
+        <p class="m-0">
+          Third-degree black belt. Founder of a multi-location academy. Coached more than ten thousand students from white belt to world podiums.
+        </p>
+        <p class="mt-5">
+          For him, it is a genuine honor to design an international BJJ experience so many people have already fallen in love with — and to set the standard for who belongs in the room, how the training runs, and what happens when you step off the mat. He didn't build this to be another camp. He built it to give the standard he holds himself to twenty-three other people he'd want at his table.
+        </p>
+      </div>
+
+      <div class="mt-10 grid grid-cols-4 gap-6 border-t border-bone/15 pt-8">
+        <div>
+          <div class="font-serif text-4xl font-light text-gold leading-none">3rd</div>
+          <div class="font-mono text-[10px] tracking-label uppercase text-bone/70 mt-2">Degree black belt</div>
+        </div>
+        <div>
+          <div class="font-serif text-4xl font-light text-gold leading-none">10K+</div>
+          <div class="font-mono text-[10px] tracking-label uppercase text-bone/70 mt-2">Students coached</div>
+        </div>
+        <div>
+          <div class="font-serif text-4xl font-light text-gold leading-none">4</div>
+          <div class="font-mono text-[10px] tracking-label uppercase text-bone/70 mt-2">Academy locations</div>
+        </div>
+        <div>
+          <div class="font-serif text-4xl font-light text-gold leading-none">22</div>
+          <div class="font-mono text-[10px] tracking-label uppercase text-bone/70 mt-2">Years on the mat</div>
+        </div>
+      </div>
+
+      <div class="mt-10">
+        <a href="#" class="px-7 py-4 font-mono text-[11px] font-semibold tracking-eyebrow uppercase border border-bone/40 text-bone hover:bg-bone hover:text-ink no-underline transition-colors inline-block">
+          Read Mikal's Letter
+        </a>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ===================================================================== -->
+<!-- 09 · FAQ                                                              -->
+<!-- ===================================================================== -->
+<section id="faq" class="bg-cream py-24 relative">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-16">
+    <div class="grid grid-cols-2 gap-12 items-start">
+      <div class="sticky top-32">
+        <div class="font-mono text-[11px] font-semibold tracking-eyebrow uppercase text-red">Common Questions</div>
+        <h2 class="font-serif font-light text-ink leading-[0.98] tracking-[-0.025em] mt-6 text-balance" style="font-size: clamp(40px, 4.2vw, 72px)">
+          Before you<br /><em class="italic text-red">request your invitation.</em>
+        </h2>
+        <p class="font-serif italic font-light text-mute leading-snug mt-7 max-w-[460px]" style="font-size: clamp(15px, 1.25vw, 18px)">
+          The questions we hear most. If you're considering joining us, this will give you clarity before you apply.
+        </p>
+        <div class="mt-12 pt-7 border-t border-ink/15 max-w-[460px]">
+          <div class="font-serif text-lg italic text-ink leading-snug">Still have questions?</div>
+          <div class="font-serif text-base italic text-mute leading-snug mt-1">We'll walk you through everything.</div>
+          <div class="mt-7">
+            <a href="#apply" class="px-7 py-4 font-mono text-[11px] font-semibold tracking-eyebrow uppercase bg-ink text-bone hover:bg-gold hover:text-ink no-underline transition-colors inline-flex items-center gap-3">
+              Request Your Invitation <span>→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <!-- FAQ items -->
+        <div data-faq-item class="border-b border-ink/15">
+          <button data-faq-toggle class="w-full py-7 bg-transparent border-0 cursor-pointer text-left grid grid-cols-[60px_1fr_24px] items-center gap-6">
+            <span class="font-mono text-[11px] tracking-label uppercase text-red">01</span>
+            <span class="font-serif text-xl font-light text-ink tracking-[-0.01em]">Do I need to be advanced?</span>
+            <span data-faq-plus class="font-serif text-[32px] font-light text-red leading-none justify-self-end">+</span>
+          </button>
+          <div data-faq-body class="pl-[84px] max-w-[540px]" style="max-height: 0; opacity: 0">
+            <p class="m-0 font-serif text-[21px] italic font-light text-ink leading-relaxed">Not at all.</p>
+            <p class="mt-4 font-serif text-[16px] font-light text-mute leading-relaxed">We've had everyone from newer white belts to seasoned black belts attend. The room is intentionally mixed.</p>
+            <p class="mt-4 font-serif text-[16px] font-light text-mute leading-relaxed">What matters isn't how long you've trained. It's that you show up, stay curious, and want to be part of the experience.</p>
+          </div>
+        </div>
+
+        <div data-faq-item class="border-b border-ink/15">
+          <button data-faq-toggle class="w-full py-7 bg-transparent border-0 cursor-pointer text-left grid grid-cols-[60px_1fr_24px] items-center gap-6">
+            <span class="font-mono text-[11px] tracking-label uppercase text-red">02</span>
+            <span class="font-serif text-xl font-light text-ink tracking-[-0.01em]">What's included in the week?</span>
+            <span data-faq-plus class="font-serif text-[32px] font-light text-red leading-none justify-self-end">+</span>
+          </button>
+          <div data-faq-body class="pl-[84px] max-w-[540px]" style="max-height: 0; opacity: 0">
+            <p class="m-0 font-serif text-[21px] italic font-light text-ink leading-relaxed">Seven days of structured training, curated experiences, and time you won't get anywhere else.</p>
+            <p class="mt-4 font-serif text-[16px] font-light text-mute leading-relaxed">Expect daily sessions, shared meals, excursions, and a small group of people you'll actually get to know.</p>
+            <p class="mt-4 font-serif text-[16px] font-light text-mute leading-relaxed">Everything is designed to feel intentional — on and off the mat.</p>
+          </div>
+        </div>
+
+        <div data-faq-item class="border-b border-ink/15">
+          <button data-faq-toggle class="w-full py-7 bg-transparent border-0 cursor-pointer text-left grid grid-cols-[60px_1fr_24px] items-center gap-6">
+            <span class="font-mono text-[11px] tracking-label uppercase text-red">03</span>
+            <span class="font-serif text-xl font-light text-ink tracking-[-0.01em]">What is the food like?</span>
+            <span data-faq-plus class="font-serif text-[32px] font-light text-red leading-none justify-self-end">+</span>
+          </button>
+          <div data-faq-body class="pl-[84px] max-w-[540px]" style="max-height: 0; opacity: 0">
+            <p class="m-0 font-serif text-[21px] italic font-light text-ink leading-relaxed">The food is one of the highlights of the week.</p>
+            <p class="mt-4 font-serif text-[16px] font-light text-mute leading-relaxed">Meals are prepared by renowned local chefs, featuring fresh, seasonal ingredients sourced from nearby farms and the Atlantic coast.</p>
+            <p class="mt-4 font-serif text-[16px] font-light text-mute leading-relaxed">Think farm-to-table produce, ocean-to-table seafood, and long-table dinners that feel as memorable as the training itself.</p>
+          </div>
+        </div>
+
+        <div data-faq-item class="border-b border-ink/15">
+          <button data-faq-toggle class="w-full py-7 bg-transparent border-0 cursor-pointer text-left grid grid-cols-[60px_1fr_24px] items-center gap-6">
+            <span class="font-mono text-[11px] tracking-label uppercase text-red">04</span>
+            <span class="font-serif text-xl font-light text-ink tracking-[-0.01em]">Is Morocco safe to travel to?</span>
+            <span data-faq-plus class="font-serif text-[32px] font-light text-red leading-none justify-self-end">+</span>
+          </button>
+          <div data-faq-body class="pl-[84px] max-w-[540px]" style="max-height: 0; opacity: 0">
+            <p class="m-0 font-serif text-[21px] italic font-light text-ink leading-relaxed">Yes — Morocco is one of the most visited destinations in the world, and we take care of the details that matter.</p>
+            <p class="mt-4 font-serif text-[16px] font-light text-mute leading-relaxed">From the moment you arrive, you'll know where to go, who to meet, and what to expect.</p>
+            <p class="mt-4 font-serif text-[16px] font-light text-mute leading-relaxed">Most people leave wondering why they didn't come sooner.</p>
+          </div>
+        </div>
+
+        <div data-faq-item class="border-b border-ink/15">
+          <button data-faq-toggle class="w-full py-7 bg-transparent border-0 cursor-pointer text-left grid grid-cols-[60px_1fr_24px] items-center gap-6">
+            <span class="font-mono text-[11px] tracking-label uppercase text-red">05</span>
+            <span class="font-serif text-xl font-light text-ink tracking-[-0.01em]">Who is this for?</span>
+            <span data-faq-plus class="font-serif text-[32px] font-light text-red leading-none justify-self-end">+</span>
+          </button>
+          <div data-faq-body class="pl-[84px] max-w-[540px]" style="max-height: 0; opacity: 0">
+            <p class="m-0 font-serif text-[21px] italic font-light text-ink leading-relaxed">This is for people who take training seriously — but also want more from the experience.</p>
+            <p class="mt-4 font-serif text-[16px] font-light text-mute leading-relaxed">You don't need to compete. You don't need to be the best in the room.</p>
+            <p class="mt-4 font-serif text-[16px] font-light text-mute leading-relaxed">You just need to value great training, meaningful travel, and being around the right people.</p>
+          </div>
+        </div>
+
+        <div data-faq-item class="border-b border-ink/15">
+          <button data-faq-toggle class="w-full py-7 bg-transparent border-0 cursor-pointer text-left grid grid-cols-[60px_1fr_24px] items-center gap-6">
+            <span class="font-mono text-[11px] tracking-label uppercase text-red">06</span>
+            <span class="font-serif text-xl font-light text-ink tracking-[-0.01em]">How does the application work?</span>
+            <span data-faq-plus class="font-serif text-[32px] font-light text-red leading-none justify-self-end">+</span>
+          </button>
+          <div data-faq-body class="pl-[84px] max-w-[540px]" style="max-height: 0; opacity: 0">
+            <p class="m-0 font-serif text-[21px] italic font-light text-ink leading-relaxed">The application takes a few minutes.</p>
+            <p class="mt-4 font-serif text-[16px] font-light text-mute leading-relaxed">We review each one personally and follow up shortly after.</p>
+            <p class="mt-4 font-serif text-[16px] font-light text-mute leading-relaxed">If it's a good fit, you'll be invited to secure your spot. If not, we'll point you toward a better future camp.</p>
+          </div>
+        </div>
+
+        <div data-faq-item class="border-b border-ink/15">
+          <button data-faq-toggle class="w-full py-7 bg-transparent border-0 cursor-pointer text-left grid grid-cols-[60px_1fr_24px] items-center gap-6">
+            <span class="font-mono text-[11px] tracking-label uppercase text-red">07</span>
+            <span class="font-serif text-xl font-light text-ink tracking-[-0.01em]">What about dietary needs?</span>
+            <span data-faq-plus class="font-serif text-[32px] font-light text-red leading-none justify-self-end">+</span>
+          </button>
+          <div data-faq-body class="pl-[84px] max-w-[540px]" style="max-height: 0; opacity: 0">
+            <p class="m-0 font-serif text-[21px] italic font-light text-ink leading-relaxed">Just let us know in advance.</p>
+            <p class="mt-4 font-serif text-[16px] font-light text-mute leading-relaxed">Meals are prepared with care, and we accommodate dietary preferences whenever possible — so you can focus on training and enjoying the experience.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bleed into apply -->
+<div class="h-24" style="background: linear-gradient(180deg, #FAF8F4 0%, #F1E9D8 100%)"></div>
+
+<!-- ===================================================================== -->
+<!-- 10 · APPLICATION SECTION                                              -->
+<!-- ===================================================================== -->
+<section id="apply" class="bg-sand text-ink py-24 relative overflow-hidden">
+  <div class="watermark" style="right: -100px; bottom: -120px; font-size: 480px; color: rgba(14,12,10,0.04)">المغرب</div>
+
+  <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-16 relative grid grid-cols-[5fr_7fr] gap-14">
+    <!-- Left rail -->
+    <div class="sticky top-32 self-start">
+      <h2 class="font-serif font-light text-ink leading-[0.98] tracking-[-0.025em] mt-7 text-balance" style="font-size: clamp(40px, 4.8vw, 72px)">
+        Request your <em class="italic text-red">invitation.</em>
+      </h2>
+
+      <p class="font-serif italic font-light text-ink/80 leading-[1.35] mt-6 max-w-[460px]" style="font-size: clamp(18px, 1.6vw, 23px)">
+        A week you'll fly back for.
+      </p>
+
+      <div class="h-px bg-ink/15 my-9 max-w-[320px]"></div>
+
+      <p class="font-serif font-light text-ink/70 leading-snug max-w-[460px]" style="font-size: clamp(16px, 1.4vw, 20px)">
+        Takes less than 3 minutes. Each application is reviewed personally.
+      </p>
+
+      <div class="mt-12 pt-6 border-t border-ink/15 grid grid-cols-2 gap-6 max-w-[460px]">
+        <div>
+          <div class="font-serif text-3xl font-light text-ink leading-none">24</div>
+          <div class="font-mono text-[11px] tracking-eyebrow uppercase text-mute mt-2.5">Athletes per camp</div>
+        </div>
+        <div>
+          <div class="font-serif text-3xl font-light text-ink leading-none">Reviewed</div>
+          <div class="font-mono text-[11px] tracking-eyebrow uppercase text-mute mt-2.5">Personally</div>
+        </div>
+      </div>
+
+      <div class="mt-7 font-serif text-[17px] italic text-ink/55 leading-relaxed max-w-[380px]">
+        Priority is given to past attendees and Inner Circle members.
+      </div>
+    </div>
+
+    <!-- Right · Form -->
+    <div class="bg-cream border border-sand-soft shadow-[0_18px_50px_rgba(14,12,10,0.08)] px-8 py-10 md:px-10 md:py-12 lg:px-12 lg:py-14 self-start">
+    <form data-application-form class="flex flex-col gap-10">
+      <!-- 01 + 02 — Name + Email -->
+      <div class="grid grid-cols-2 gap-8">
+        <label data-field class="block relative">
+          <input id="field-name" type="text" class="w-full pt-6 pb-3.5 bg-transparent border-0 border-b border-ink/15 focus:border-ink text-ink font-serif text-xl font-light outline-none transition-colors" />
+          <span class="absolute left-0 top-5.5 font-mono text-[12px] tracking-label uppercase text-ink/50 pointer-events-none">
+            <span class="text-ink/40 mr-2">01</span> Full name
+          </span>
+        </label>
+        <label data-field class="block relative">
+          <input id="field-email" type="email" class="w-full pt-6 pb-3.5 bg-transparent border-0 border-b border-ink/15 focus:border-ink text-ink font-serif text-xl font-light outline-none transition-colors" />
+          <span class="absolute left-0 top-5.5 font-mono text-[12px] tracking-label uppercase text-ink/50 pointer-events-none">
+            <span class="text-ink/40 mr-2">02</span> Email
+          </span>
+        </label>
+      </div>
+
+      <!-- 03 — Belt -->
+      <div>
+        <div class="font-mono text-[11px] font-semibold tracking-eyebrow uppercase text-ink mb-2">
+          <span class="text-red mr-2.5">03</span> Belt level
+        </div>
+        <h3 class="font-serif text-xl font-light text-ink/80 m-0 mb-4 italic">Where are you on the journey?</h3>
+        <div data-pill-group="belt" class="flex gap-2 flex-wrap">
+          <button type="button" data-pill="White"  class="px-5 py-3 bg-cream text-ink/70 border border-ink/15 hover:border-ink/30 hover:text-ink/90 font-mono text-[10px] font-semibold tracking-label uppercase cursor-pointer transition-all">White</button>
+          <button type="button" data-pill="Blue"   class="px-5 py-3 bg-cream text-ink/70 border border-ink/15 hover:border-ink/30 hover:text-ink/90 font-mono text-[10px] font-semibold tracking-label uppercase cursor-pointer transition-all">Blue</button>
+          <button type="button" data-pill="Purple" class="px-5 py-3 bg-cream text-ink/70 border border-ink/15 hover:border-ink/30 hover:text-ink/90 font-mono text-[10px] font-semibold tracking-label uppercase cursor-pointer transition-all">Purple</button>
+          <button type="button" data-pill="Brown"  class="px-5 py-3 bg-cream text-ink/70 border border-ink/15 hover:border-ink/30 hover:text-ink/90 font-mono text-[10px] font-semibold tracking-label uppercase cursor-pointer transition-all">Brown</button>
+          <button type="button" data-pill="Black"  class="px-5 py-3 bg-cream text-ink/70 border border-ink/15 hover:border-ink/30 hover:text-ink/90 font-mono text-[10px] font-semibold tracking-label uppercase cursor-pointer transition-all">Black</button>
+        </div>
+      </div>
+
+      <!-- 04 — Path -->
+      <div>
+        <div class="font-mono text-[11px] font-semibold tracking-eyebrow uppercase text-ink mb-2">
+          <span class="text-red mr-2.5">04</span> Your path
+        </div>
+        <h3 class="font-serif font-light text-ink m-0 my-3 leading-[1.15] tracking-[-0.015em] text-balance" style="font-size: clamp(20px, 2.2vw, 28px)">
+          Which best describes your current path in <em class="italic text-red">jiu-jitsu?</em>
+        </h3>
+        <div data-choice-group="path">
+          <button type="button" data-choice="Academy owner" class="w-full grid grid-cols-[56px_1fr_auto] gap-6 items-center px-6 py-6 bg-cream text-ink border border-ink/15 cursor-pointer text-left mb-2 transition-all hover:bg-sand-soft hover:border-ink/30 hover:-translate-y-0.5 hover:shadow-sm">
+            <span data-choice-num class="font-mono text-[11px] tracking-label text-ink/45 font-semibold">01</span>
+            <div>
+              <div data-choice-title class="font-serif text-[22px] font-light text-ink leading-[1.15] tracking-[-0.01em]">Academy owner</div>
+              <div data-choice-sub class="font-serif text-[15px] italic text-ink/55 mt-1.5 leading-relaxed">You run the room.</div>
+            </div>
+            <span data-choice-cta class="font-mono text-[11px] tracking-label uppercase text-ink/30 font-semibold">Select →</span>
+          </button>
+          <button type="button" data-choice="Instructor / coach" class="w-full grid grid-cols-[56px_1fr_auto] gap-6 items-center px-6 py-6 bg-cream text-ink border border-ink/15 cursor-pointer text-left mb-2 transition-all hover:bg-sand-soft hover:border-ink/30 hover:-translate-y-0.5 hover:shadow-sm">
+            <span data-choice-num class="font-mono text-[11px] tracking-label text-ink/45 font-semibold">02</span>
+            <div>
+              <div data-choice-title class="font-serif text-[22px] font-light text-ink leading-[1.15] tracking-[-0.01em]">Instructor / coach</div>
+              <div data-choice-sub class="font-serif text-[15px] italic text-ink/55 mt-1.5 leading-relaxed">You hold the standard for others.</div>
+            </div>
+            <span data-choice-cta class="font-mono text-[11px] tracking-label uppercase text-ink/30 font-semibold">Select →</span>
+          </button>
+          <button type="button" data-choice="Active competitor" class="w-full grid grid-cols-[56px_1fr_auto] gap-6 items-center px-6 py-6 bg-cream text-ink border border-ink/15 cursor-pointer text-left mb-2 transition-all hover:bg-sand-soft hover:border-ink/30 hover:-translate-y-0.5 hover:shadow-sm">
+            <span data-choice-num class="font-mono text-[11px] tracking-label text-ink/45 font-semibold">03</span>
+            <div>
+              <div data-choice-title class="font-serif text-[22px] font-light text-ink leading-[1.15] tracking-[-0.01em]">Active competitor</div>
+              <div data-choice-sub class="font-serif text-[15px] italic text-ink/55 mt-1.5 leading-relaxed">You're on a podium calendar.</div>
+            </div>
+            <span data-choice-cta class="font-mono text-[11px] tracking-label uppercase text-ink/30 font-semibold">Select →</span>
+          </button>
+          <button type="button" data-choice="Dedicated practitioner" class="w-full grid grid-cols-[56px_1fr_auto] gap-6 items-center px-6 py-6 bg-cream text-ink border border-ink/15 cursor-pointer text-left transition-all hover:bg-sand-soft hover:border-ink/30 hover:-translate-y-0.5 hover:shadow-sm">
+            <span data-choice-num class="font-mono text-[11px] tracking-label text-ink/45 font-semibold">04</span>
+            <div>
+              <div data-choice-title class="font-serif text-[22px] font-light text-ink leading-[1.15] tracking-[-0.01em]">Dedicated practitioner</div>
+              <div data-choice-sub class="font-serif text-[15px] italic text-ink/55 mt-1.5 leading-relaxed">You train because it's who you are.</div>
+            </div>
+            <span data-choice-cta class="font-mono text-[11px] tracking-label uppercase text-ink/30 font-semibold">Select →</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 05 — Intent -->
+      <div>
+        <div class="font-mono text-[11px] font-semibold tracking-eyebrow uppercase text-ink mb-2">
+          <span class="text-red mr-2.5">05</span> Intent
+        </div>
+        <h3 class="font-serif font-light text-ink m-0 my-3 leading-[1.15] tracking-[-0.015em] text-balance" style="font-size: clamp(20px, 2.2vw, 28px)">
+          How serious are you about <em class="italic text-red">attending?</em>
+        </h3>
+        <div data-choice-group="intent">
+          <button type="button" data-choice="Ready for this adventure" class="w-full grid grid-cols-[56px_1fr_auto] gap-6 items-center px-6 py-6 bg-cream text-ink border border-ink/15 cursor-pointer text-left mb-2 transition-all hover:bg-sand-soft hover:border-ink/30 hover:-translate-y-0.5 hover:shadow-sm">
+            <span data-choice-num class="font-mono text-[11px] tracking-label text-ink/45 font-semibold">01</span>
+            <div>
+              <div data-choice-title class="font-serif text-[22px] font-light text-ink leading-[1.15] tracking-[-0.01em]">Ready for this adventure</div>
+              <div data-choice-sub class="font-serif text-[15px] italic text-ink/55 mt-1.5 leading-relaxed">Oct 8–12, 2026.</div>
+            </div>
+            <span data-choice-cta class="font-mono text-[11px] tracking-label uppercase text-ink/30 font-semibold">Select →</span>
+          </button>
+          <button type="button" data-choice="Interested in a future camp" class="w-full grid grid-cols-[56px_1fr_auto] gap-6 items-center px-6 py-6 bg-cream text-ink border border-ink/15 cursor-pointer text-left mb-2 transition-all hover:bg-sand-soft hover:border-ink/30 hover:-translate-y-0.5 hover:shadow-sm">
+            <span data-choice-num class="font-mono text-[11px] tracking-label text-ink/45 font-semibold">02</span>
+            <div>
+              <div data-choice-title class="font-serif text-[22px] font-light text-ink leading-[1.15] tracking-[-0.01em]">Interested in a future camp</div>
+              <div data-choice-sub class="font-serif text-[15px] italic text-ink/55 mt-1.5 leading-relaxed">Tell me when the next one opens.</div>
+            </div>
+            <span data-choice-cta class="font-mono text-[11px] tracking-label uppercase text-ink/30 font-semibold">Select →</span>
+          </button>
+          <button type="button" data-choice="Exploring for now" class="w-full grid grid-cols-[56px_1fr_auto] gap-6 items-center px-6 py-6 bg-cream text-ink border border-ink/15 cursor-pointer text-left transition-all hover:bg-sand-soft hover:border-ink/30 hover:-translate-y-0.5 hover:shadow-sm">
+            <span data-choice-num class="font-mono text-[11px] tracking-label text-ink/45 font-semibold">03</span>
+            <div>
+              <div data-choice-title class="font-serif text-[22px] font-light text-ink leading-[1.15] tracking-[-0.01em]">Exploring for now</div>
+              <div data-choice-sub class="font-serif text-[15px] italic text-ink/55 mt-1.5 leading-relaxed">Sending Dispatch and updates.</div>
+            </div>
+            <span data-choice-cta class="font-mono text-[11px] tracking-label uppercase text-ink/30 font-semibold">Select →</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- CTA + microcopy -->
+      <div class="mt-1">
+        <button data-submit type="submit" disabled class="w-full px-8 py-5 font-mono text-xs font-semibold tracking-eyebrow uppercase bg-ink text-bone border-0 inline-flex items-center justify-center gap-3.5 transition-all shadow-sm disabled:opacity-50 disabled:cursor-not-allowed hover:-translate-y-0.5 hover:shadow-md">
+          Request Your Invitation <span class="text-base">→</span>
+        </button>
+
+        <div class="mt-5 text-center">
+          <div class="font-serif text-[15px] italic text-ink/55">Prefer to move faster?</div>
+          <a href="/events/next-adventure.html" class="mt-3 inline-flex items-center justify-center w-full px-7 py-4 font-mono text-[11px] font-semibold tracking-eyebrow uppercase border border-ink/20 text-ink no-underline transition-all hover:bg-sand-soft hover:border-ink/30 hover:-translate-y-0.5">
+            Secure Your Adventure <span class="text-base">→</span>
+          </a>
+        </div>
+
+        <div class="mt-4 text-center font-serif text-[15px] italic text-ink/55">
+          Step <span data-step-counter>0</span> / 5 · Takes less than 3 minutes.
+        </div>
+        <div class="mt-7 pt-6 border-t border-ink/15 grid grid-cols-3 gap-4">
+          <div>
+            <div class="font-mono text-[10px] tracking-label uppercase text-red font-semibold">01</div>
+            <div class="font-serif text-[15px] italic text-ink/70 mt-2 leading-relaxed">Limited to 24 athletes per adventure.</div>
+          </div>
+          <div>
+            <div class="font-mono text-[10px] tracking-label uppercase text-red font-semibold">02</div>
+            <div class="font-serif text-[15px] italic text-ink/70 mt-2 leading-relaxed">Applications are reviewed personally.</div>
+          </div>
+          <div>
+            <div class="font-mono text-[10px] tracking-label uppercase text-red font-semibold">03</div>
+            <div class="font-serif text-[15px] italic text-ink/70 mt-2 leading-relaxed">Priority is given to past attendees and Inner Circle members.</div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <!-- Thank you state — hidden by default -->
+    <div data-thank-you class="hidden self-center">
+      <div class="font-mono text-[11px] font-semibold tracking-eyebrow uppercase text-red">Application received · 48-hour review</div>
+      <h3 class="font-serif font-light text-ink leading-[0.95] tracking-[-0.02em] mt-6 text-balance" style="font-size: clamp(40px, 5vw, 76px)">
+        <span data-thank-name>Thank you</span> — <em class="italic text-red">we'll be in touch.</em>
+      </h3>
+      <p class="font-serif text-2xl italic font-light text-ink/70 leading-snug mt-7 max-w-[540px]">
+        Mikal reads every application personally. You'll hear back at <span data-thank-email class="text-ink not-italic font-mono text-[15px] tracking-wide"></span> within forty-eight hours.
+      </p>
+      <div class="mt-10 font-mono text-[10px] tracking-label uppercase text-red font-semibold">
+        ● 17 of 24 spots open · Next adventure
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================================== -->
+<!-- 11 · FOOTER · INNER CIRCLE                                            -->
+<!-- ===================================================================== -->
+<footer>
+  <!-- Inner Circle / Lead capture -->
+  <section id="inner-circle" class="bg-bone py-24 relative overflow-hidden scroll-mt-20">
+    <div class="watermark" style="right: -80px; top: -80px; font-size: 420px; color: rgba(14,12,10,0.035)">المغرب</div>
+
+    <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-16 relative grid grid-cols-[1.05fr_1fr] gap-16 items-start">
+      <div>
+        <div class="font-mono text-[11px] font-semibold tracking-eyebrow uppercase text-red">By invitation · Est. 2019</div>
+        <h2 class="font-serif font-light text-ink leading-[0.98] tracking-[-0.025em] mt-7 text-balance" style="font-size: clamp(44px, 4.8vw, 72px)">
+          Get early access<br />to every <em class="italic text-red">BJJ adventure.</em>
+        </h2>
+        <p class="font-serif italic font-light text-charcoal leading-snug mt-7 max-w-[480px]" style="font-size: clamp(16px, 1.45vw, 21px)">
+          One letter each month. Private training insights. BJJ highlights. And early access to every camp — before the public.
+        </p>
+
+        <div class="mt-10 pt-7 border-t border-ink/10 flex flex-col gap-3 font-mono text-[11px] tracking-label uppercase text-mute">
+          <div class="flex gap-3.5 items-center">
+            <span class="w-1.5 h-1.5 bg-gold rounded-full"></span>
+            <span>3,400 readers · 47 countries</span>
+          </div>
+          <div class="flex gap-3.5 items-center">
+            <span class="w-1.5 h-1.5 bg-gold rounded-full"></span>
+            <span>Past attendees & black belts read first</span>
+          </div>
+          <div class="flex gap-3.5 items-center">
+            <span class="w-1.5 h-1.5 bg-gold rounded-full"></span>
+            <span>One letter monthly · Never sold, never shared</span>
+          </div>
+        </div>
+      </div>
+
+      <form id="newsletter-form" class="pt-3">
+        <div class="flex justify-between items-baseline pb-4 mb-7 border-b border-ink">
+          <span class="font-serif text-2xl font-medium italic text-ink">Request Early Access</span>
+          <span class="font-mono text-[10px] tracking-eyebrow uppercase text-mute">No. 014 / 26</span>
+        </div>
+
+        <div class="grid grid-cols-2 gap-6 mb-7">
+          <div>
+            <label class="block font-mono text-[10px] tracking-eyebrow uppercase text-mute font-semibold mb-3">Full name</label>
+            <input id="newsletter-name" name="name" placeholder="Imani Reyes" class="w-full pt-3 pb-3 text-[16px] font-serif font-light italic bg-transparent text-ink border-0 border-b border-ink/35 focus:border-ink rounded-none outline-none transition-colors" />
+          </div>
+          <div>
+            <label class="block font-mono text-[10px] tracking-eyebrow uppercase text-mute font-semibold mb-3">Email</label>
+            <input id="newsletter-email" name="email" type="email" placeholder="you@email.com" class="w-full pt-3 pb-3 text-[16px] font-serif font-light italic bg-transparent text-ink border-0 border-b border-ink/35 focus:border-ink rounded-none outline-none transition-colors" />
+          </div>
+        </div>
+
+        <div class="mb-9">
+          <label class="block font-mono text-[10px] tracking-eyebrow uppercase text-mute font-semibold mb-1">Belt</label>
+          <p class="font-serif text-base font-light italic text-mute m-0 mb-4 leading-snug">Your level helps us tailor your experience.</p>
+          <input type="hidden" id="newsletter-belt" name="belt" value="">
+          <div class="grid grid-cols-5 border border-ink" data-footer-belt-group>
+            <button type="button" data-footer-belt="White"  class="py-3.5 font-mono text-[10px] tracking-label uppercase font-semibold bg-transparent text-ink border-0 border-r border-ink cursor-pointer transition-colors">White</button>
+            <button type="button" data-footer-belt="Blue"   class="py-3.5 font-mono text-[10px] tracking-label uppercase font-semibold bg-ink text-bone border-0 border-r border-ink cursor-pointer transition-colors">Blue</button>
+            <button type="button" data-footer-belt="Purple" class="py-3.5 font-mono text-[10px] tracking-label uppercase font-semibold bg-transparent text-ink border-0 border-r border-ink cursor-pointer transition-colors">Purple</button>
+            <button type="button" data-footer-belt="Brown"  class="py-3.5 font-mono text-[10px] tracking-label uppercase font-semibold bg-transparent text-ink border-0 border-r border-ink cursor-pointer transition-colors">Brown</button>
+            <button type="button" data-footer-belt="Black"  class="py-3.5 font-mono text-[10px] tracking-label uppercase font-semibold bg-transparent text-ink border-0 cursor-pointer transition-colors">Black</button>
+          </div>
+        </div>
+
+        <button type="submit" class="w-full px-7 py-5 font-mono text-xs font-semibold tracking-eyebrow uppercase bg-ink text-bone border-0 cursor-pointer flex items-center justify-center gap-3.5 hover:bg-gold hover:text-ink transition-colors">
+          Join the Inner Circle <span class="text-base">→</span>
+        </button>
+
+        <div class="mt-6 flex flex-col gap-2">
+          <p class="font-sans text-xs text-charcoal m-0 leading-snug">Limited access. No spam. Priority goes to serious applicants.</p>
+          <p class="font-serif text-sm font-light italic text-mute m-0 leading-snug">Priority access is given to past attendees and readers.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Cinematic emotional pause -->
+  <section class="bg-bone pt-10 pb-28 text-center relative">
+    <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-16">
+    <div class="w-px h-14 bg-ink/15 mx-auto mb-14"></div>
+    <div class="font-mono text-[11px] font-semibold tracking-eyebrow uppercase text-mute mb-8">From those who've returned</div>
+    <h3 class="font-serif font-light text-ink leading-[1.06] tracking-[-0.025em] m-0 text-balance max-w-4xl mx-auto" style="font-size: clamp(38px, 4.8vw, 72px)">
+      The ultimate BJJ adventure and experience.
+    </h3>
+    </div>
+  </section>
+
+  <!-- Dark footer -->
+  <div class="bg-ink text-bone pt-20 pb-9 relative">
+    <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-16">
+    <div class="grid grid-cols-[1.4fr_1fr_1fr_1fr_1fr] gap-10 mb-16">
+      <div>
+        <!-- assets/logo.png — wordmark -->
+        <img src="assets/logo.png" alt="BJJ Camp Morocco" class="h-11 brightness-0 invert" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<span class=\'font-serif italic text-2xl text-bone\'>BJJ Camp Morocco</span>')" />
+        <p class="font-serif text-[17px] font-light italic leading-snug text-bone/80 mt-7 max-w-[320px]">
+          Brazilian Jiu-Jitsu in the High Atlas, the Sahara and the Atlantic coast — for those who train for the rest of their lives.
+        </p>
+        <div class="font-mono text-[11px] font-semibold tracking-eyebrow uppercase text-gold mt-9">Riad Tashfin · Marrakech</div>
+      </div>
+
+      <div>
+        <div class="font-mono text-[10px] tracking-eyebrow uppercase text-gold mb-7">Experiences</div>
+        <ul class="list-none m-0 p-0 flex flex-col gap-3.5">
+          <li><a href="#" class="font-serif text-[17px] font-light text-bone hover:text-gold no-underline transition-colors">The High Atlas</a></li>
+          <li><a href="#" class="font-serif text-[17px] font-light text-bone hover:text-gold no-underline transition-colors">Coastal Essaouira</a></li>
+          <li><a href="#" class="font-serif text-[17px] font-light text-bone hover:text-gold no-underline transition-colors">Sahara Expedition</a></li>
+          <li><a href="#" class="font-serif text-[17px] font-light text-bone hover:text-gold no-underline transition-colors">Marrakech Return</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="font-mono text-[10px] tracking-eyebrow uppercase text-gold mb-7">The Camp</div>
+        <ul class="list-none m-0 p-0 flex flex-col gap-3.5">
+          <li><a href="#" class="font-serif text-[17px] font-light text-bone hover:text-gold no-underline transition-colors">The Experience</a></li>
+          <li><a href="#" class="font-serif text-[17px] font-light text-bone hover:text-gold no-underline transition-colors">Training Philosophy</a></li>
+          <li><a href="#" class="font-serif text-[17px] font-light text-bone hover:text-gold no-underline transition-colors">Meet Mikal</a></li>
+          <li><a href="#" class="font-serif text-[17px] font-light text-bone hover:text-gold no-underline transition-colors">Past Athletes</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="font-mono text-[10px] tracking-eyebrow uppercase text-gold mb-7">Plan Your Trip</div>
+        <ul class="list-none m-0 p-0 flex flex-col gap-3.5">
+          <li><a href="#apply" class="font-serif text-[17px] font-light text-bone hover:text-gold no-underline transition-colors">Apply</a></li>
+          <li><a href="#" class="font-serif text-[17px] font-light text-bone hover:text-gold no-underline transition-colors">Pricing</a></li>
+          <li><a href="#" class="font-serif text-[17px] font-light text-bone hover:text-gold no-underline transition-colors">Travel Guide</a></li>
+          <li><a href="#faq" class="font-serif text-[17px] font-light text-bone hover:text-gold no-underline transition-colors">FAQ</a></li>
+          <li><a href="#" class="font-serif text-[17px] font-light text-bone hover:text-gold no-underline transition-colors">Concierge</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="font-mono text-[10px] tracking-eyebrow uppercase text-gold mb-7">Inside Access</div>
+        <ul class="list-none m-0 p-0 flex flex-col gap-3.5">
+          <li><a href="#" class="font-serif text-[17px] font-light text-bone hover:text-gold no-underline transition-colors">The Dispatch</a></li>
+          <li><a href="#" class="font-serif text-[17px] font-light text-bone hover:text-gold no-underline transition-colors">Photo Journal</a></li>
+          <li><a href="#" class="font-serif text-[17px] font-light text-bone hover:text-gold no-underline transition-colors">Podcast</a></li>
+          <li><a href="#" class="font-serif text-[17px] font-light text-bone hover:text-gold no-underline transition-colors">Affiliates</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pt-12 border-t border-bone/10 flex justify-between items-center flex-wrap gap-8">
+      <div>
+        <div class="font-mono text-[11px] font-semibold tracking-eyebrow uppercase text-gold mb-3.5">Follow the journey</div>
+        <div class="font-serif text-2xl font-light italic text-bone">@bjjcampmorocco</div>
+      </div>
+      <div class="flex gap-2 flex-wrap">
+        <a href="#" class="inline-flex items-center gap-3.5 px-4 py-3 border border-bone/20 text-bone no-underline hover:bg-gold hover:text-ink hover:border-gold transition-colors">
+          <span class="font-mono text-xs font-semibold tracking-[0.16em]">IG</span>
+          <span class="w-px h-3.5 bg-current opacity-40"></span>
+          <span class="font-serif text-base italic">Stories</span>
+        </a>
+        <a href="#" class="inline-flex items-center gap-3.5 px-4 py-3 border border-bone/20 text-bone no-underline hover:bg-gold hover:text-ink hover:border-gold transition-colors">
+          <span class="font-mono text-xs font-semibold tracking-[0.16em]">YT</span>
+          <span class="w-px h-3.5 bg-current opacity-40"></span>
+          <span class="font-serif text-base italic">Watch</span>
+        </a>
+        <a href="#" class="inline-flex items-center gap-3.5 px-4 py-3 border border-bone/20 text-bone no-underline hover:bg-gold hover:text-ink hover:border-gold transition-colors">
+          <span class="font-mono text-xs font-semibold tracking-[0.16em]">PC</span>
+          <span class="w-px h-3.5 bg-current opacity-40"></span>
+          <span class="font-serif text-base italic">Listen</span>
+        </a>
+        <a href="#" class="inline-flex items-center gap-3.5 px-4 py-3 border border-bone/20 text-bone no-underline hover:bg-gold hover:text-ink hover:border-gold transition-colors">
+          <span class="font-mono text-xs font-semibold tracking-[0.16em]">WA</span>
+          <span class="w-px h-3.5 bg-current opacity-40"></span>
+          <span class="font-serif text-base italic">Whisper</span>
+        </a>
+        <a href="#" class="inline-flex items-center gap-3.5 px-4 py-3 border border-bone/20 text-bone no-underline hover:bg-gold hover:text-ink hover:border-gold transition-colors">
+          <span class="font-mono text-xs font-semibold tracking-[0.16em]">SU</span>
+          <span class="w-px h-3.5 bg-current opacity-40"></span>
+          <span class="font-serif text-base italic">Read</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-14 pt-5 border-t border-bone/10 flex justify-between items-center font-mono text-[10px] tracking-label uppercase text-bone/50 flex-wrap gap-4">
+      <span>© 2026 BJJ Camp Morocco</span>
+      <div class="flex gap-8">
+        <a href="#" class="text-inherit no-underline">Privacy</a>
+        <a href="#" class="text-inherit no-underline">Terms</a>
+        <a href="#" class="text-inherit no-underline">Sitemap</a>
+      </div>
+      <div class="flex gap-3.5 items-center">
+        <span class="text-bone">EN</span>
+        <span class="opacity-40">·</span>
+        <a href="#" class="text-inherit no-underline">FR</a>
+        <span class="opacity-40">·</span>
+        <a href="#" class="text-inherit no-underline">AR</a>
+      </div>
+    </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // Footer belt selector — small inline handler (separate from main form)
+  document.querySelectorAll("[data-footer-belt-group] button").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const value = btn.dataset.footerBelt;
+      const beltInput = document.getElementById("newsletter-belt");
+      if (beltInput) beltInput.value = value;
+      btn.parentElement.querySelectorAll("button").forEach((b) => {
+        const isActive = b.dataset.footerBelt === value;
+        b.classList.toggle("bg-ink", isActive);
+        b.classList.toggle("text-bone", isActive);
+        b.classList.toggle("bg-transparent", !isActive);
+        b.classList.toggle("text-ink", !isActive);
+      });
+    });
+  });
+</script>
+
+<script>
+(function() {
+  const form = document.getElementById('newsletter-form');
+  if (!form) return;
+
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalBtnText = submitBtn ? submitBtn.textContent : 'Subscribe';
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('newsletter-name').value.trim();
+    const email = document.getElementById('newsletter-email').value.trim();
+    const belt = document.getElementById('newsletter-belt').value;
+
+    // Basic validation
+    if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+      showNewsletterError('Please enter a valid email.');
+      return;
+    }
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+    }
+    clearNewsletterError();
+
+    try {
+      const res = await fetch('https://bjj-camp-forms.bjjcamp.workers.dev/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, belt })
+      });
+      const data = await res.json();
+      if (res.ok && data.ok) {
+        showNewsletterSuccess();
+      } else {
+        throw new Error('Subscribe failed');
+      }
+    } catch (err) {
+      console.error(err);
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+      }
+      showNewsletterError('Something went wrong. Please try again.');
+    }
+  });
+
+  function showNewsletterError(msg) {
+    clearNewsletterError();
+    const div = document.createElement('div');
+    div.id = 'newsletter-error';
+    div.style.cssText = 'color: rgba(220,38,38,0.9); font-size: 12px; margin-top: 8px; font-family: monospace; text-transform: uppercase; letter-spacing: 0.1em;';
+    div.textContent = msg;
+    form.appendChild(div);
+  }
+
+  function clearNewsletterError() {
+    const existing = document.getElementById('newsletter-error');
+    if (existing) existing.remove();
+  }
+
+  function showNewsletterSuccess() {
+    // Replace form contents with a thank-you message in the same style
+    const wrapper = form.parentElement;
+    form.style.display = 'none';
+    const thanks = document.createElement('div');
+    thanks.style.cssText = 'font-family: serif; font-style: italic; color: rgba(242,235,220,0.85); font-size: 18px; padding: 16px 0;';
+    thanks.textContent = "You're on the list. Watch your inbox.";
+    wrapper.appendChild(thanks);
+  }
+})();
+</script>
+</body>
+</html>

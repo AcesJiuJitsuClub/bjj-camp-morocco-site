@@ -1,0 +1,14 @@
+name = "bjj-camp-forms"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+[vars]
+# Public, non-sensitive config. Secrets go via `wrangler secret put`.
+AC_API_URL = "https://bjjcampmorocco.api-us1.com"
+AC_LIST_PROSPECT = "3"
+AC_LIST_MEMBER = "4"
+AC_FIELD_BELT = "6"
+AC_FIELD_PATH = "14"
+AC_FIELD_INTENT = "15"
+AC_FIELD_CAMP = "16"
+ALLOWED_ORIGINS = "https://bjjcampmorocco.com,https://www.bjjcampmorocco.com,http://localhost:3000,http://localhost:5173,http://127.0.0.1:5500"
