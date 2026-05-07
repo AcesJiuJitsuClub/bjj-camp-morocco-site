@@ -1,0 +1,33 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node / npm
+node_modules/
+npm-debug.log*
+
+# Cloudflare Wrangler artifacts
+.wrangler/
+.dev.vars
+
+# Old deploy staging folder (legacy from Wrangler Pages deploy)
+.cf-deploy/
+
+# Google Drive sync artifacts
+.tmp.drivedownload/
+.tmp.driveupload/
+
+# Environment / secrets
+.env
+.env.local
+*.key
+*.pem
+
+# Logs
+*.log
