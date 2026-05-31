@@ -269,34 +269,36 @@
 
     <!-- Featured testimonial -->
     <div class="grid grid-cols-[8fr_6fr] gap-12 items-stretch mb-16">
-      <div class="relative overflow-hidden aspect-[16/10]">
-        <!-- assets/testimonial-1.jpg — Reza on rooftop mat -->
-        <img src="assets/testimonial-1.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" />
-        <div class="ph absolute inset-0" data-label="REZA · BLACK BELT · DUBAI · CAMP 01 · 02:34">REZA · BLACK BELT · DUBAI · CAMP 01 · 02:34</div>
-        <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 50%, rgba(14,12,10,0.85) 100%)"></div>
+      <div class="relative overflow-hidden aspect-[16/10]" data-testimonial>
+        <video data-testimonial-video playsinline preload="none" poster="assets/sam-bjj-camp-testimonial-poster.jpg" class="absolute inset-0 w-full h-full object-cover hidden">
+          <source src="assets/sam-bjj-camp-testimonial.mp4" type="video/mp4" />
+        </video>
+        <img src="assets/sam-bjj-camp-testimonial-poster.jpg" alt="Sam at Camp 01 in Morocco" data-testimonial-poster class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" />
+        <div class="ph absolute inset-0 -z-10" data-label="SAM · PURPLE BELT · UNITED KINGDOM · 01:54">SAM · PURPLE BELT · UNITED KINGDOM · 01:54</div>
+        <div data-testimonial-chrome class="absolute inset-0" style="background: linear-gradient(180deg, transparent 50%, rgba(14,12,10,0.85) 100%)"></div>
 
-        <button aria-label="Play testimonial" class="absolute left-8 bottom-8 w-20 h-20 rounded-full border border-gold bg-gold/15 backdrop-blur cursor-pointer flex items-center justify-center hover:bg-gold/30 transition-colors">
+        <button data-testimonial-play aria-label="Play testimonial" class="absolute left-8 bottom-8 w-20 h-20 rounded-full border border-gold bg-gold/15 backdrop-blur cursor-pointer flex items-center justify-center hover:bg-gold/30 transition-colors">
           <span class="ml-1.5" style="width: 0; height: 0; border-left: 18px solid #C9A96E; border-top: 11px solid transparent; border-bottom: 11px solid transparent;"></span>
         </button>
 
-        <div class="absolute right-6 top-6 px-3 py-1.5 bg-ink/60 border border-bone/30 font-mono text-[10px] tracking-label uppercase text-bone">
-          ▶ 02:34 · Watch
+        <div data-testimonial-chrome class="absolute right-6 top-6 px-3 py-1.5 bg-ink/60 border border-bone/30 font-mono text-[10px] tracking-label uppercase text-bone">
+          ▶ 01:54 · Watch
         </div>
 
-        <div class="absolute left-8 bottom-32 text-bone">
-          <div class="font-serif text-3xl italic">Reza Mahmoodi</div>
-          <div class="font-mono text-[10px] tracking-label uppercase text-gold mt-1.5">Black Belt · Dubai · Camp 01</div>
+        <div data-testimonial-chrome class="absolute left-8 bottom-32 text-bone">
+          <div class="font-serif text-3xl italic">Sam</div>
+          <div class="font-mono text-[10px] tracking-label uppercase text-gold mt-1.5">Purple Belt · United Kingdom · Camp 01</div>
         </div>
       </div>
 
       <figure class="m-0 flex flex-col justify-center">
         <div class="font-serif text-[112px] text-red leading-[0.4] mb-3">"</div>
         <blockquote class="m-0 font-serif font-light text-ink leading-[1.28] tracking-[-0.01em] text-balance" style="font-size: clamp(24px, 2.1vw, 34px)">
-          I've done a lot of camps. This is the only one I'd go back to without thinking.
+          …everyone here has been really great! It is 100% worth it!
         </blockquote>
         <figcaption class="mt-8 pt-5 border-t border-ink/15">
-          <div class="font-serif text-xl italic font-medium text-ink">Reza Mahmoodi</div>
-          <div class="font-mono text-[10px] tracking-label uppercase text-mute mt-1.5">Black Belt · Dubai · Returning Athlete</div>
+          <div class="font-serif text-xl italic font-medium text-ink">Sam</div>
+          <div class="font-mono text-[10px] tracking-label uppercase text-mute mt-1.5">Purple Belt · United Kingdom · Founding Camper</div>
         </figcaption>
       </figure>
     </div>
@@ -1257,6 +1259,31 @@
       if (attempt && typeof attempt.catch === 'function') { attempt.catch(function() {}); }
     }
   });
+})();
+</script>
+
+<script>
+(function() {
+  const wrap = document.querySelector('[data-testimonial]');
+  if (!wrap) return;
+
+  const video = wrap.querySelector('[data-testimonial-video]');
+  const poster = wrap.querySelector('[data-testimonial-poster]');
+  const playBtn = wrap.querySelector('[data-testimonial-play]');
+  const chrome = wrap.querySelectorAll('[data-testimonial-chrome]');
+  if (!video || !playBtn) return;
+
+  function start() {
+    video.classList.remove('hidden');
+    if (poster) poster.classList.add('hidden');
+    playBtn.classList.add('hidden');
+    chrome.forEach(function(el) { el.classList.add('hidden'); });
+    video.controls = true;
+    var attempt = video.play();
+    if (attempt && typeof attempt.catch === 'function') { attempt.catch(function() {}); }
+  }
+
+  playBtn.addEventListener('click', start);
 })();
 </script>
 </body>
