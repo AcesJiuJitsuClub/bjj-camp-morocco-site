@@ -31,3 +31,15 @@ npm-debug.log*
 
 # Logs
 *.log
+
+# Video source files — host on CDN or commit selectively, not via git
+assets/*.m4v
+assets/*.mov
+assets/*.MOV
+assets/*.avi
+
+# Compressed web-ready video is committed for Cloudflare Pages delivery.
+# The .m4v source stays ignored above. If we ever move to R2 or another
+# CDN, uncomment the two lines below:
+# assets/*.mp4
+# assets/*.webm

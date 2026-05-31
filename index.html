@@ -148,10 +148,14 @@
 <!-- 02 · HERO                                                             -->
 <!-- ===================================================================== -->
 <section id="top" class="relative w-full h-screen overflow-hidden bg-ink">
-  <!-- assets/hero-reel.mp4 — replace with real footage; assets/hero-poster.jpg fallback -->
-  <video autoplay muted loop playsinline poster="assets/hero-poster.jpg" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
-    <source src="assets/hero-reel.mp4" type="video/mp4" />
+  <!-- TODO: regenerate assets/hero-poster.jpg from cinematic-highlight.m4v if needed -->
+  <video autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg" aria-hidden="true" disablepictureinpicture disableremoteplayback class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700" onerror="this.style.display='none'">
+    <source src="assets/cinematic-highlight.webm" type="video/webm" />
+    <source src="assets/cinematic-highlight.mp4" type="video/mp4" />
   </video>
+  <noscript>
+    <img src="assets/hero-poster.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" aria-hidden="true" />
+  </noscript>
   <!-- Placeholder under video (only visible if assets missing) -->
   <div class="ph absolute inset-0 -z-0" data-label="HERO · CAMP 03 · RABAT · FULL BLEED">
     HERO · CAMP 03 · RABAT · FULL BLEED
@@ -1230,6 +1234,25 @@
     thanks.style.cssText = 'font-family: serif; font-style: italic; color: rgba(242,235,220,0.85); font-size: 18px; padding: 16px 0;';
     thanks.textContent = "You're on the list. Watch your inbox.";
     wrapper.appendChild(thanks);
+  }
+})();
+</script>
+
+<script>
+(function() {
+  const heroVideo = document.querySelector('#top video');
+  if (!heroVideo) return;
+
+  heroVideo.addEventListener('loadeddata', function() {
+    heroVideo.classList.remove('opacity-0');
+    heroVideo.classList.add('opacity-100');
+  });
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    heroVideo.pause();
+    heroVideo.removeAttribute('loop');
+    heroVideo.classList.remove('opacity-0');
+    heroVideo.classList.add('opacity-100');
   }
 })();
 </script>
