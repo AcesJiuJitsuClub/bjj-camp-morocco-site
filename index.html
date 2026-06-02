@@ -120,7 +120,7 @@
       <!-- assets/logo.png — BJJ Camp Morocco wordmark, transparent PNG -->
       <img src="assets/logo.png" alt="BJJ Camp Morocco" class="h-8 brightness-0 invert" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<span class=\'font-serif italic text-bone text-xl\'>BJJ Camp Morocco</span>')" />
     </a>
-    <nav class="flex gap-8 items-center">
+    <nav class="hidden md:flex gap-8 items-center">
       <a href="#experience" data-nav-link="experience" class="relative font-mono text-[11px] font-semibold tracking-label uppercase text-bone/80 hover:text-gold no-underline transition-colors">
         Experience
         <span data-nav-underline class="absolute -bottom-1.5 left-0 right-0 h-px bg-gold scale-x-0"></span>
@@ -141,6 +141,23 @@
         Request Invitation →
       </a>
     </nav>
+
+    <!-- Mobile: hamburger -->
+    <button data-mobile-toggle aria-label="Menu" class="md:hidden flex flex-col gap-1.5 p-2">
+      <span class="w-6 h-px bg-bone"></span>
+      <span class="w-6 h-px bg-bone"></span>
+      <span class="w-6 h-px bg-bone"></span>
+    </button>
+  </div>
+
+  <div data-mobile-menu class="hidden md:hidden bg-ink/95 backdrop-blur-md border-t border-bone/10">
+    <div class="px-6 py-6 flex flex-col gap-5">
+      <a href="#experience" class="font-mono text-[12px] font-semibold tracking-label uppercase text-bone/80 no-underline">Experience</a>
+      <a href="#schedule" class="font-mono text-[12px] font-semibold tracking-label uppercase text-bone/80 no-underline">Schedule</a>
+      <a href="#testimonials" class="font-mono text-[12px] font-semibold tracking-label uppercase text-bone/80 no-underline">Testimonials</a>
+      <a href="#faq" class="font-mono text-[12px] font-semibold tracking-label uppercase text-bone/80 no-underline">FAQ</a>
+      <a href="#apply" class="px-5 py-3 text-center font-mono text-[11px] font-semibold tracking-label uppercase bg-gold text-ink no-underline">Request Invitation →</a>
+    </div>
   </div>
 </header>
 
@@ -1288,6 +1305,18 @@
 
   playBtn.addEventListener('click', start);
 })();
+</script>
+<script>
+  (function () {
+    var t = document.querySelector('[data-mobile-toggle]');
+    var m = document.querySelector('[data-mobile-menu]');
+    if (t && m) {
+      t.addEventListener('click', function () { m.classList.toggle('hidden'); });
+      m.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () { m.classList.add('hidden'); });
+      });
+    }
+  })();
 </script>
 </body>
 </html>
