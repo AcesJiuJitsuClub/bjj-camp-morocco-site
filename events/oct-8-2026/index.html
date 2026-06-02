@@ -167,7 +167,7 @@
       <!-- assets/logo.png — BJJ Camp Morocco wordmark, transparent PNG -->
       <img src="/assets/logo.png" alt="BJJ Camp Morocco" class="h-8 brightness-0 invert" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<span class=&quot;font-serif italic text-bone text-xl&quot;>BJJ Camp Morocco</span>')" />
     </a>
-    <nav class="flex gap-8 items-center">
+    <nav class="hidden md:flex gap-8 items-center">
       <a href="/#experience" class="relative font-mono text-[11px] font-semibold tracking-label uppercase text-bone/80 hover:text-gold no-underline transition-colors">
         Experience
         <span data-nav-underline class="absolute -bottom-1.5 left-0 right-0 h-px bg-gold scale-x-0"></span>
@@ -188,6 +188,23 @@
         Secure Your Spot →
       </a>
     </nav>
+
+    <!-- Mobile: hamburger -->
+    <button data-mobile-toggle aria-label="Menu" class="md:hidden flex flex-col gap-1.5 p-2">
+      <span class="w-6 h-px bg-bone"></span>
+      <span class="w-6 h-px bg-bone"></span>
+      <span class="w-6 h-px bg-bone"></span>
+    </button>
+  </div>
+
+  <div data-mobile-menu class="hidden md:hidden bg-ink/95 backdrop-blur-md border-t border-bone/10">
+    <div class="px-6 py-6 flex flex-col gap-5">
+      <a href="/#experience" class="font-mono text-[12px] font-semibold tracking-label uppercase text-bone/80 no-underline">Experience</a>
+      <a href="/#schedule" class="font-mono text-[12px] font-semibold tracking-label uppercase text-bone/80 no-underline">Schedule</a>
+      <a href="/#testimonials" class="font-mono text-[12px] font-semibold tracking-label uppercase text-bone/80 no-underline">Testimonials</a>
+      <a href="/#faq" class="font-mono text-[12px] font-semibold tracking-label uppercase text-bone/80 no-underline">FAQ</a>
+      <a href="#checkout" class="px-5 py-3 text-center font-mono text-[11px] font-semibold tracking-label uppercase bg-gold text-ink no-underline">Secure Your Spot →</a>
+    </div>
   </div>
 </header>
 
@@ -579,7 +596,7 @@
 <section id="faq" class="bg-bone py-24 relative scroll-mt-20">
   <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-16">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-      <div class="sticky top-32">
+      <div class="lg:sticky lg:top-32">
         <div class="font-mono text-[11px] font-semibold tracking-eyebrow uppercase text-red">Common questions</div>
         <h2 class="font-serif font-light text-ink leading-[0.98] tracking-[-0.025em] mt-6 text-balance" style="font-size: clamp(40px, 4.2vw, 72px)">
           Before you<br /><em class="italic text-red">check out.</em>
@@ -739,7 +756,7 @@
   <section id="inner-circle" class="bg-bone py-24 relative overflow-hidden scroll-mt-20">
     <div class="watermark" style="right: -80px; top: -80px; font-size: 420px; color: rgba(14,12,10,0.035)">المغرب</div>
 
-    <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-16 relative grid grid-cols-[1.05fr_1fr] gap-16 items-start">
+    <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-16 relative grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-16 items-start">
       <div>
         <div class="font-mono text-[11px] font-semibold tracking-eyebrow uppercase text-red">By invitation · Est. 2019</div>
         <h2 class="font-serif font-light text-ink leading-[0.98] tracking-[-0.025em] mt-7 text-balance" style="font-size: clamp(44px, 4.8vw, 72px)">
@@ -771,7 +788,7 @@
           <span class="font-mono text-[10px] tracking-eyebrow uppercase text-mute">No. 014 / 26</span>
         </div>
 
-        <div class="grid grid-cols-2 gap-6 mb-7">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-7">
           <div>
             <label class="block font-mono text-[10px] tracking-eyebrow uppercase text-mute font-semibold mb-3">Full name</label>
             <input placeholder="Imani Reyes" class="w-full pt-3 pb-3 text-[16px] font-serif font-light italic bg-transparent text-ink border-0 border-b border-ink/35 focus:border-ink rounded-none outline-none transition-colors" />
@@ -820,7 +837,7 @@
   <!-- Dark footer -->
   <div class="bg-ink text-bone pt-20 pb-9 relative">
     <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-16">
-    <div class="grid grid-cols-[1.4fr_1fr_1fr_1fr_1fr] gap-10 mb-16">
+    <div class="grid grid-cols-2 md:grid-cols-[1.4fr_1fr_1fr_1fr_1fr] gap-10 mb-16">
       <div>
         <!-- assets/logo.png — wordmark -->
         <img src="/assets/logo.png" alt="BJJ Camp Morocco" class="h-11 brightness-0 invert" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<span class=&quot;font-serif italic text-2xl text-bone&quot;>BJJ Camp Morocco</span>')" />
@@ -875,33 +892,23 @@
     <div class="pt-12 border-t border-bone/10 flex justify-between items-center flex-wrap gap-8">
       <div>
         <div class="font-mono text-[11px] font-semibold tracking-eyebrow uppercase text-gold mb-3.5">Follow the journey</div>
-        <div class="font-serif text-2xl font-light italic text-bone">@bjjcampmorocco</div>
+        <div class="font-serif text-2xl font-light italic text-bone">@bjj_camp_morocco</div>
       </div>
       <div class="flex gap-2 flex-wrap">
-        <a href="#" class="inline-flex items-center gap-3.5 px-4 py-3 border border-bone/20 text-bone no-underline hover:bg-gold hover:text-ink hover:border-gold transition-colors">
+        <a href="https://www.instagram.com/bjj_camp_morocco" target="_blank" rel="noopener" class="inline-flex items-center gap-3.5 px-4 py-3 border border-bone/20 text-bone no-underline hover:bg-gold hover:text-ink hover:border-gold transition-colors">
           <span class="font-mono text-xs font-semibold tracking-[0.16em]">IG</span>
           <span class="w-px h-3.5 bg-current opacity-40"></span>
           <span class="font-serif text-base italic">Stories</span>
         </a>
-        <a href="#" class="inline-flex items-center gap-3.5 px-4 py-3 border border-bone/20 text-bone no-underline hover:bg-gold hover:text-ink hover:border-gold transition-colors">
+        <a href="https://www.youtube.com/@bjjcampmorocco" target="_blank" rel="noopener" class="inline-flex items-center gap-3.5 px-4 py-3 border border-bone/20 text-bone no-underline hover:bg-gold hover:text-ink hover:border-gold transition-colors">
           <span class="font-mono text-xs font-semibold tracking-[0.16em]">YT</span>
           <span class="w-px h-3.5 bg-current opacity-40"></span>
           <span class="font-serif text-base italic">Watch</span>
         </a>
-        <a href="#" class="inline-flex items-center gap-3.5 px-4 py-3 border border-bone/20 text-bone no-underline hover:bg-gold hover:text-ink hover:border-gold transition-colors">
-          <span class="font-mono text-xs font-semibold tracking-[0.16em]">PC</span>
+        <a href="https://www.facebook.com/bjjcampmorocco" target="_blank" rel="noopener" class="inline-flex items-center gap-3.5 px-4 py-3 border border-bone/20 text-bone no-underline hover:bg-gold hover:text-ink hover:border-gold transition-colors">
+          <span class="font-mono text-xs font-semibold tracking-[0.16em]">FB</span>
           <span class="w-px h-3.5 bg-current opacity-40"></span>
-          <span class="font-serif text-base italic">Listen</span>
-        </a>
-        <a href="#" class="inline-flex items-center gap-3.5 px-4 py-3 border border-bone/20 text-bone no-underline hover:bg-gold hover:text-ink hover:border-gold transition-colors">
-          <span class="font-mono text-xs font-semibold tracking-[0.16em]">WA</span>
-          <span class="w-px h-3.5 bg-current opacity-40"></span>
-          <span class="font-serif text-base italic">Whisper</span>
-        </a>
-        <a href="#" class="inline-flex items-center gap-3.5 px-4 py-3 border border-bone/20 text-bone no-underline hover:bg-gold hover:text-ink hover:border-gold transition-colors">
-          <span class="font-mono text-xs font-semibold tracking-[0.16em]">SU</span>
-          <span class="w-px h-3.5 bg-current opacity-40"></span>
-          <span class="font-serif text-base italic">Read</span>
+          <span class="font-serif text-base italic">Follow</span>
         </a>
       </div>
     </div>
@@ -976,6 +983,18 @@
     }
     window.addEventListener('scroll', update, { passive: true });
     update();
+  })();
+</script>
+<script>
+  (function () {
+    var t = document.querySelector('[data-mobile-toggle]');
+    var m = document.querySelector('[data-mobile-menu]');
+    if (t && m) {
+      t.addEventListener('click', function () { m.classList.toggle('hidden'); });
+      m.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () { m.classList.add('hidden'); });
+      });
+    }
   })();
 </script>
 </body>
